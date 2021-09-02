@@ -157,8 +157,13 @@ void applydwm(){
 
 void applygtk(){
   char buffer[128];
-  sprintf(buffer, "xfconf-query -c xsettings -p /Net/ThemeName -s \"%s\"", gtktheme);
-  system(buffer);
+  FILE *xsettings;
+
+  sprintf(buffer, "%s/.xsettingsd", getenv("HOME"));
+  xsettings = fopen(buffer, "w");
+  fprintf(xsettings, "Net/ThemeName \"%s\"", gtktheme);
+  fclose(xsettings);
+  system("killall -HUP xsettingsd");
 }
 
 void changescheme(int color){
