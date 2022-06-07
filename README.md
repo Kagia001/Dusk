@@ -7,8 +7,8 @@ Dusk is a C program which swiches your programs between light and dark mode depe
 Configuring the program with source code sadly means that you can't install Dusk from a package manager. However, it isn't especially difficult to install from source.
 
 ```bash
-git clone placeholder
-cd dusk
+git clone https://github.com/Kagia001/Dusk.git
+cd Dusk
 ```
 here's where you configure Dusk
 ``` bash
